@@ -18,7 +18,7 @@ inclusion: always
 
 - Source of truth for the Crew format: KiroCrew repo docs/app-kit/ (manifest-reference.md, getting-started.md, publishing-guide.md, api-reference.md) on main. Kiro Crew 0.13.0 is installed; if main documents something newer, what 0.13.0 accepts on install wins.
 
-## crew-app (Autopilot, 1 review, credit target 120 or less) - DONE 21 Nov, ~2535 credits
+## crew-app (Autopilot, 1 review, credit target 120 or less) - DONE 21 Nov, ~160 credits (2,535 total)
 
 - Built: app.json (cron, backend, ui, skill, credentialMasks); stdlib backend with HMAC proxy check; daily 9:00 IST script cron with ladder.json fallback (masked secrets.json unreadable from the cron sandbox, verified on install); Graveyard page with armed-only "Ask the banshee"; tax-bomb skill (s.43B(h) / s.37(2)(g)); 1 Claude Code review, ship-after-fixes, 8 fixes; installed and verified on Kiro Crew 0.13.0.
 
