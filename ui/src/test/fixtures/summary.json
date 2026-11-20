@@ -3,9 +3,15 @@
   "today": "2026-11-12",
   "disclaimer": "Reminders a supplier sends to its own buyers. Not legal advice.",
   "totals": {
-    "outstanding": { "text": "₹5,62,000" },
-    "interestAccrued": { "text": "₹6,310.52" },
-    "deductionsAtRisk": { "text": "₹4,12,000" },
+    "outstanding": {
+      "text": "₹5,62,000"
+    },
+    "interestAccrued": {
+      "text": "₹6,310.52"
+    },
+    "deductionsAtRisk": {
+      "text": "₹4,12,000"
+    },
     "explodedCount": 1,
     "paidCount": 3
   },
@@ -15,13 +21,18 @@
       "buyerName": "Sharma Textiles Pvt Ltd",
       "invoiceNumber": "INV-2026-014",
       "stateText": "Overdue",
-      "principal": { "text": "₹4,12,000" },
+      "principal": {
+        "text": "₹4,12,000"
+      },
       "dueDateText": "17 Oct 2026",
       "daysOverdue": 26,
-      "interest": { "text": "₹5,127.94" },
+      "interest": {
+        "text": "₹5,127.94"
+      },
       "taxBomb": {
         "daysLeft": 139,
-        "deductionAtRiskText": "₹4,12,000 deduction at risk"
+        "deductionAtRiskText": "₹4,12,000 deduction at risk",
+        "status": "armed"
       },
       "nextLabel": "Next: firm reminder"
     },
@@ -30,12 +41,34 @@
       "buyerName": "Verma Traders",
       "invoiceNumber": "INV-2026-019",
       "stateText": "Not yet due",
-      "principal": { "text": "₹1,50,000" },
+      "principal": {
+        "text": "₹1,50,000"
+      },
       "dueDateText": null,
       "daysOverdue": 0,
       "interest": null,
       "taxBomb": null,
       "nextLabel": "Next: courtesy nudge"
+    },
+    {
+      "id": "inv-iyer-3",
+      "buyerName": "Iyer Mills",
+      "invoiceNumber": "INV-2025-031",
+      "stateText": "Exploded",
+      "principal": {
+        "text": "₹2,00,000"
+      },
+      "dueDateText": "15 Jan 2026",
+      "daysOverdue": 301,
+      "interest": {
+        "text": "₹9,876.00"
+      },
+      "taxBomb": {
+        "status": "exploded",
+        "daysLeft": 0,
+        "deductionAtRiskText": "₹2,00,000 deduction at risk"
+      },
+      "nextLabel": "Next: final notice"
     }
   ]
 }

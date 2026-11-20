@@ -5,7 +5,9 @@ export interface Money {
   text: string;
 }
 
+// Values from the web app's engine: "armed" | "exploded" | "defused". Only "armed" shows the box.
 export interface TaxBomb {
+  status: string;
   daysLeft: number;
   deductionAtRiskText: string;
 }

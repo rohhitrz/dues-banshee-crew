@@ -226,6 +226,9 @@ function Totals({ summary }: { summary: CrewSummary }) {
 }
 
 function Stone({ t, onAsk }: { t: Tombstone; onAsk: (t: Tombstone) => void }) {
+  // The banshee box and the Ask button only make sense while the bomb is armed;
+  // stateText already says exploded or paid for the rest.
+  const armed = t.taxBomb !== null && t.taxBomb.status === "armed" ? t.taxBomb : null;
   return (
     <article style={s.stone}>
       <span className="banshee-flame" style={s.candle} aria-hidden="true" />
@@ -238,15 +241,15 @@ function Stone({ t, onAsk }: { t: Tombstone; onAsk: (t: Tombstone) => void }) {
         <li>{`${t.daysOverdue} days overdue`}</li>
         {t.interest !== null && <li>{t.interest.text}</li>}
       </ul>
-      {t.taxBomb !== null && (
+      {armed !== null && (
         <p style={s.bomb}>
-          <span>{t.taxBomb.deductionAtRiskText}</span>
+          <span>{armed.deductionAtRiskText}</span>
           <br />
-          <span>{`${t.taxBomb.daysLeft} days to 31 March`}</span>
+          <span>{`${armed.daysLeft} days to 31 March`}</span>
         </p>
       )}
       <p style={s.next}>{t.nextLabel}</p>
-      {t.taxBomb !== null && (
+      {armed !== null && (
         <button type="button" className="banshee-ask" style={s.ask} onClick={() => onAsk(t)}>
           Ask the banshee
         </button>

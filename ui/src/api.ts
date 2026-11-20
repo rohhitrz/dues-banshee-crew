@@ -42,7 +42,7 @@ export async function loadSummary(api: SummaryApi, demo: boolean): Promise<Summa
 
   const code = errorCode(body);
   if (code !== null) return { kind: "error", code };
-  if (isObject(body) && Array.isArray(body.tombstones)) {
+  if (isObject(body) && isObject(body.totals) && Array.isArray(body.tombstones)) {
     return { kind: "data", summary: body as unknown as CrewSummary };
   }
   return REQUEST_FAILED;

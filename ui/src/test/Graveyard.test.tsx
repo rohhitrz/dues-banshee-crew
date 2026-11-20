@@ -133,6 +133,16 @@ describe("Graveyard page: other states", () => {
   });
 });
 
+describe("Graveyard page: malformed bodies", () => {
+  it("shows 'Request failed' when totals is missing", async () => {
+    const data = summary() as unknown as Record<string, unknown>;
+    delete data.totals;
+    get.mockResolvedValue(data);
+    render(<GraveyardPage />);
+    expect(await screen.findByText("Request failed")).toBeTruthy();
+    expect(screen.queryByRole("article")).toBeNull();
+  });
+});
 describe("Graveyard page: demo toggle and request paths", () => {
   it("requests the plain path when off and the demo path when on", async () => {
     get.mockResolvedValue(summary());
@@ -181,6 +191,16 @@ describe("Graveyard page: Ask the banshee", () => {
     expect(get).toHaveBeenCalledTimes(1);
   });
 
+  it("shows no tax-bomb box and no button on an exploded invoice with a non-null taxBomb", async () => {
+    get.mockResolvedValue(summary());
+    render(<GraveyardPage />);
+    await screen.findByText("Iyer Mills");
+    const iyer = stoneOf("Iyer Mills");
+    expect(iyer.getByText("Exploded")).toBeTruthy();
+    expect(iyer.queryByText(/days to 31 March/)).toBeNull();
+    expect(iyer.queryByText(/deduction at risk/)).toBeNull();
+    expect(iyer.queryByRole("button")).toBeNull();
+  });
   it("shows exactly one button: none on the null-taxBomb tombstone", async () => {
     get.mockResolvedValue(summary());
     render(<GraveyardPage />);

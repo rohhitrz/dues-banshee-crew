@@ -28,7 +28,7 @@ async function p(e, t) {
 		return u;
 	}
 	let r = f(n);
-	return r === null ? d(n) && Array.isArray(n.tombstones) ? {
+	return r === null ? d(n) && d(n.totals) && Array.isArray(n.tombstones) ? {
 		kind: "data",
 		summary: n
 	} : u : {
@@ -310,6 +310,7 @@ function b({ summary: e }) {
 	});
 }
 function x({ t: e, onAsk: t }) {
+	let n = e.taxBomb !== null && e.taxBomb.status === "armed" ? e.taxBomb : null;
 	return /* @__PURE__ */ s("article", {
 		style: v.stone,
 		children: [
@@ -354,19 +355,19 @@ function x({ t: e, onAsk: t }) {
 					e.interest !== null && /* @__PURE__ */ o("li", { children: e.interest.text })
 				]
 			}),
-			e.taxBomb !== null && /* @__PURE__ */ s("p", {
+			n !== null && /* @__PURE__ */ s("p", {
 				style: v.bomb,
 				children: [
-					/* @__PURE__ */ o("span", { children: e.taxBomb.deductionAtRiskText }),
+					/* @__PURE__ */ o("span", { children: n.deductionAtRiskText }),
 					/* @__PURE__ */ o("br", {}),
-					/* @__PURE__ */ o("span", { children: `${e.taxBomb.daysLeft} days to 31 March` })
+					/* @__PURE__ */ o("span", { children: `${n.daysLeft} days to 31 March` })
 				]
 			}),
 			/* @__PURE__ */ o("p", {
 				style: v.next,
 				children: e.nextLabel
 			}),
-			e.taxBomb !== null && /* @__PURE__ */ o("button", {
+			n !== null && /* @__PURE__ */ o("button", {
 				type: "button",
 				className: "banshee-ask",
 				style: v.ask,

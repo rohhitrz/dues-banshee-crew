@@ -41,7 +41,7 @@ const tombstone: fc.Arbitrary<AskTombstone> = fc.record({
   dueDateText: fc.option(text, { nil: null }),
   daysOverdue: fc.integer(),
   interest: fc.option(money, { nil: null }),
-  taxBomb: fc.record({ daysLeft: fc.integer(), deductionAtRiskText: text }),
+  taxBomb: fc.record({ status: fc.constant("armed"), daysLeft: fc.integer(), deductionAtRiskText: text }),
   nextLabel: text,
 });
 
