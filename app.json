@@ -1,0 +1,38 @@
+{
+  "name": "dues-banshee",
+  "version": "0.1.0",
+  "displayName": "Dues Banshee",
+  "description": "Graveyard of overdue MSE dues, a daily 9:00 IST reminder ladder, and an s.43B(h) tax-bomb explainer for a Dues Banshee supplier.",
+  "author": "rohhitrz",
+  "license": "MIT",
+  "minKiroCrewVersion": "0.13.0",
+  "iconPath": "assets/icon.png",
+  "skills": ["skills/tax-bomb"],
+  "crons": [
+    {
+      "name": "daily-ladder",
+      "cron_expr": "0 9 * * *",
+      "timezone": "Asia/Kolkata",
+      "strict_schedule": true,
+      "script": "cron/daily_ladder.py:run",
+      "timeout": 290,
+      "timeout_secs": 300
+    }
+  ],
+  "ui": {
+    "entry": "dist/index.mjs",
+    "pages": [{ "route": "/apps/dues-banshee", "label": "Graveyard of Dues" }]
+  },
+  "backend": {
+    "entryPoint": "backend/server.py",
+    "type": "python",
+    "port": "auto",
+    "healthCheck": "/health"
+  },
+  "credentialMasks": ["secrets.json"],
+  "permissions": {
+    "api": ["/apps/dues-banshee/api"],
+    "cron": true,
+    "network": true
+  }
+}
