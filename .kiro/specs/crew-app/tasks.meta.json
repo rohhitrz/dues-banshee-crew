@@ -1,0 +1,311 @@
+{
+  "pbtResults": {
+    "5.3 Write the ask-message property test": {
+      "status": "passed",
+      "lastRunTimestamp": 1795203298451
+    }
+  },
+  "executionHistory": {
+    "1. Icon generator and committed icon": [
+      {
+        "executionId": "c2291217-5764-4880-90a3-31d279217614",
+        "chatSessionId": "sess_f30b6d2c-2131-4f3d-b5cd-958bed6874cd",
+        "timestamp": 1795201104771
+      },
+      {
+        "executionId": "c2291217-5764-4880-90a3-31d279217614",
+        "chatSessionId": "sess_f30b6d2c-2131-4f3d-b5cd-958bed6874cd",
+        "timestamp": 1795201188565
+      }
+    ],
+    "2.1 Implement the pure Backend helpers": [
+      {
+        "executionId": "a4ab8f28-4e63-438d-88f0-7d75de463993",
+        "chatSessionId": "sess_54f957f9-c68e-41ae-8ee7-4e92cccd43de",
+        "timestamp": 1795201364414
+      },
+      {
+        "executionId": "a4ab8f28-4e63-438d-88f0-7d75de463993",
+        "chatSessionId": "sess_54f957f9-c68e-41ae-8ee7-4e92cccd43de",
+        "timestamp": 1795201493523
+      }
+    ],
+    "2.2 Implement the HTTP server and routes": [
+      {
+        "executionId": "a4ab8f28-4e63-438d-88f0-7d75de463993",
+        "chatSessionId": "sess_54f957f9-c68e-41ae-8ee7-4e92cccd43de",
+        "timestamp": 1795201498592
+      },
+      {
+        "executionId": "a4ab8f28-4e63-438d-88f0-7d75de463993",
+        "chatSessionId": "sess_54f957f9-c68e-41ae-8ee7-4e92cccd43de",
+        "timestamp": 1795201597453
+      }
+    ],
+    "2.3 Write Backend example tests": [
+      {
+        "executionId": "a4ab8f28-4e63-438d-88f0-7d75de463993",
+        "chatSessionId": "sess_54f957f9-c68e-41ae-8ee7-4e92cccd43de",
+        "timestamp": 1795201601195
+      },
+      {
+        "executionId": "a4ab8f28-4e63-438d-88f0-7d75de463993",
+        "chatSessionId": "sess_54f957f9-c68e-41ae-8ee7-4e92cccd43de",
+        "timestamp": 1795201781306
+      }
+    ],
+    "2.4 Write Backend property tests (stdlib `random`, fixed seeds, ≥100 cases each, `subTest`, tagged `# Feature: crew-app, Property N`)": [
+      {
+        "executionId": "a4ab8f28-4e63-438d-88f0-7d75de463993",
+        "chatSessionId": "sess_54f957f9-c68e-41ae-8ee7-4e92cccd43de",
+        "timestamp": 1795201784644
+      },
+      {
+        "executionId": "a4ab8f28-4e63-438d-88f0-7d75de463993",
+        "chatSessionId": "sess_54f957f9-c68e-41ae-8ee7-4e92cccd43de",
+        "timestamp": 1795201968900
+      }
+    ],
+    "2. Backend (`backend/server.py`)": [
+      {
+        "executionId": "a4ab8f28-4e63-438d-88f0-7d75de463993",
+        "chatSessionId": "sess_54f957f9-c68e-41ae-8ee7-4e92cccd43de",
+        "timestamp": 1795201968942
+      }
+    ],
+    "3.1 Implement the ladder script": [
+      {
+        "executionId": "cac4fc62-4574-4b7c-a0b0-df02036a3820",
+        "chatSessionId": "sess_96b9c8e8-8a09-480a-be63-d1a61013e7ba",
+        "timestamp": 1795202160032
+      },
+      {
+        "executionId": "cac4fc62-4574-4b7c-a0b0-df02036a3820",
+        "chatSessionId": "sess_96b9c8e8-8a09-480a-be63-d1a61013e7ba",
+        "timestamp": 1795202240203
+      }
+    ],
+    "3.2 Write ladder example tests": [
+      {
+        "executionId": "cac4fc62-4574-4b7c-a0b0-df02036a3820",
+        "chatSessionId": "sess_96b9c8e8-8a09-480a-be63-d1a61013e7ba",
+        "timestamp": 1795202240500
+      },
+      {
+        "executionId": "cac4fc62-4574-4b7c-a0b0-df02036a3820",
+        "chatSessionId": "sess_96b9c8e8-8a09-480a-be63-d1a61013e7ba",
+        "timestamp": 1795202310093
+      }
+    ],
+    "3.3 Write ladder property tests (stdlib `random`, fixed seeds, `subTest`, tagged `# Feature: crew-app, Property N`)": [
+      {
+        "executionId": "cac4fc62-4574-4b7c-a0b0-df02036a3820",
+        "chatSessionId": "sess_96b9c8e8-8a09-480a-be63-d1a61013e7ba",
+        "timestamp": 1795202309731
+      },
+      {
+        "executionId": "cac4fc62-4574-4b7c-a0b0-df02036a3820",
+        "chatSessionId": "sess_96b9c8e8-8a09-480a-be63-d1a61013e7ba",
+        "timestamp": 1795202389283
+      }
+    ],
+    "3. Ladder_Script (`cron/daily_ladder.py`)": [
+      {
+        "executionId": "cac4fc62-4574-4b7c-a0b0-df02036a3820",
+        "chatSessionId": "sess_96b9c8e8-8a09-480a-be63-d1a61013e7ba",
+        "timestamp": 1795202389313
+      }
+    ],
+    "4.1 Create the UI package, build and test config": [
+      {
+        "executionId": "7f7a1c8d-cd00-4ec7-853c-41e76cc61402",
+        "chatSessionId": "sess_c77a2cc5-0d27-4313-bcea-229e65b8c202",
+        "timestamp": 1795202780048
+      },
+      {
+        "executionId": "7f7a1c8d-cd00-4ec7-853c-41e76cc61402",
+        "chatSessionId": "sess_c77a2cc5-0d27-4313-bcea-229e65b8c202",
+        "timestamp": 1795203006009
+      }
+    ],
+    "4. UI tooling setup": [
+      {
+        "executionId": "7f7a1c8d-cd00-4ec7-853c-41e76cc61402",
+        "chatSessionId": "sess_c77a2cc5-0d27-4313-bcea-229e65b8c202",
+        "timestamp": 1795203006038
+      }
+    ],
+    "5.1 Implement types, API loader and ask-message builder": [
+      {
+        "executionId": "354e6e5b-972f-47f9-8cb0-7be62624f8b3",
+        "chatSessionId": "sess_df0ba9af-25fc-4d66-9fe8-0cb0e5945272",
+        "timestamp": 1795203181252
+      },
+      {
+        "executionId": "354e6e5b-972f-47f9-8cb0-7be62624f8b3",
+        "chatSessionId": "sess_df0ba9af-25fc-4d66-9fe8-0cb0e5945272",
+        "timestamp": 1795203238096
+      }
+    ],
+    "5.2 Implement the page view and entry component": [
+      {
+        "executionId": "354e6e5b-972f-47f9-8cb0-7be62624f8b3",
+        "chatSessionId": "sess_df0ba9af-25fc-4d66-9fe8-0cb0e5945272",
+        "timestamp": 1795203243351
+      },
+      {
+        "executionId": "354e6e5b-972f-47f9-8cb0-7be62624f8b3",
+        "chatSessionId": "sess_df0ba9af-25fc-4d66-9fe8-0cb0e5945272",
+        "timestamp": 1795203360254
+      }
+    ],
+    "5.3 Write the ask-message property test": [
+      {
+        "executionId": "354e6e5b-972f-47f9-8cb0-7be62624f8b3",
+        "chatSessionId": "sess_df0ba9af-25fc-4d66-9fe8-0cb0e5945272",
+        "timestamp": 1795203243390
+      },
+      {
+        "executionId": "354e6e5b-972f-47f9-8cb0-7be62624f8b3",
+        "chatSessionId": "sess_df0ba9af-25fc-4d66-9fe8-0cb0e5945272",
+        "timestamp": 1795203360625
+      }
+    ],
+    "5.4 Write the page render tests with the Sharma fixture": [
+      {
+        "executionId": "354e6e5b-972f-47f9-8cb0-7be62624f8b3",
+        "chatSessionId": "sess_df0ba9af-25fc-4d66-9fe8-0cb0e5945272",
+        "timestamp": 1795203364335
+      },
+      {
+        "executionId": "354e6e5b-972f-47f9-8cb0-7be62624f8b3",
+        "chatSessionId": "sess_df0ba9af-25fc-4d66-9fe8-0cb0e5945272",
+        "timestamp": 1795203470282
+      }
+    ],
+    "5.5 Build and keep the bundle": [
+      {
+        "executionId": "354e6e5b-972f-47f9-8cb0-7be62624f8b3",
+        "chatSessionId": "sess_df0ba9af-25fc-4d66-9fe8-0cb0e5945272",
+        "timestamp": 1795203472180
+      },
+      {
+        "executionId": "354e6e5b-972f-47f9-8cb0-7be62624f8b3",
+        "chatSessionId": "sess_df0ba9af-25fc-4d66-9fe8-0cb0e5945272",
+        "timestamp": 1795203536573
+      }
+    ],
+    "5. Graveyard of Dues page": [
+      {
+        "executionId": "354e6e5b-972f-47f9-8cb0-7be62624f8b3",
+        "chatSessionId": "sess_df0ba9af-25fc-4d66-9fe8-0cb0e5945272",
+        "timestamp": 1795203536616
+      }
+    ],
+    "6.1 Write SKILL.md": [
+      {
+        "executionId": "69f1fc9b-4c13-4be8-aa7b-2ac236ae1a31",
+        "chatSessionId": "sess_09fcce17-1076-447f-a801-34595b0aa10e",
+        "timestamp": 1795203774173
+      },
+      {
+        "executionId": "69f1fc9b-4c13-4be8-aa7b-2ac236ae1a31",
+        "chatSessionId": "sess_09fcce17-1076-447f-a801-34595b0aa10e",
+        "timestamp": 1795203834552
+      }
+    ],
+    "6.2 Write skill wording checks": [
+      {
+        "executionId": "69f1fc9b-4c13-4be8-aa7b-2ac236ae1a31",
+        "chatSessionId": "sess_09fcce17-1076-447f-a801-34595b0aa10e",
+        "timestamp": 1795203835035
+      },
+      {
+        "executionId": "69f1fc9b-4c13-4be8-aa7b-2ac236ae1a31",
+        "chatSessionId": "sess_09fcce17-1076-447f-a801-34595b0aa10e",
+        "timestamp": 1795203889383
+      }
+    ],
+    "6. Tax-bomb skill": [
+      {
+        "executionId": "69f1fc9b-4c13-4be8-aa7b-2ac236ae1a31",
+        "chatSessionId": "sess_09fcce17-1076-447f-a801-34595b0aa10e",
+        "timestamp": 1795203889416
+      }
+    ],
+    "7.1 Write app.json": [
+      {
+        "executionId": "d9a3226c-2928-47ce-8491-68cbf593318e",
+        "chatSessionId": "sess_a095eefb-6b8f-4cb0-8219-6f5774f7c42f",
+        "timestamp": 1795204013637
+      },
+      {
+        "executionId": "d9a3226c-2928-47ce-8491-68cbf593318e",
+        "chatSessionId": "sess_a095eefb-6b8f-4cb0-8219-6f5774f7c42f",
+        "timestamp": 1795204060790
+      }
+    ],
+    "7.2 Write manifest tests": [
+      {
+        "executionId": "d9a3226c-2928-47ce-8491-68cbf593318e",
+        "chatSessionId": "sess_a095eefb-6b8f-4cb0-8219-6f5774f7c42f",
+        "timestamp": 1795204061119
+      },
+      {
+        "executionId": "d9a3226c-2928-47ce-8491-68cbf593318e",
+        "chatSessionId": "sess_a095eefb-6b8f-4cb0-8219-6f5774f7c42f",
+        "timestamp": 1795204112006
+      }
+    ],
+    "7. Manifest (`app.json`)": [
+      {
+        "executionId": "d9a3226c-2928-47ce-8491-68cbf593318e",
+        "chatSessionId": "sess_a095eefb-6b8f-4cb0-8219-6f5774f7c42f",
+        "timestamp": 1795204112037
+      }
+    ],
+    "1.0 Write .gitignore": [
+      {
+        "executionId": "1f519a79-63be-48e6-a66f-0a231be694f1",
+        "chatSessionId": "sess_b7a6e62f-a873-4035-9bbb-91ccfc1065d8",
+        "timestamp": 1795204259780
+      },
+      {
+        "executionId": "1f519a79-63be-48e6-a66f-0a231be694f1",
+        "chatSessionId": "sess_b7a6e62f-a873-4035-9bbb-91ccfc1065d8",
+        "timestamp": 1795204287364
+      }
+    ],
+    "8.2 Write README.md": [
+      {
+        "executionId": "1f519a79-63be-48e6-a66f-0a231be694f1",
+        "chatSessionId": "sess_b7a6e62f-a873-4035-9bbb-91ccfc1065d8",
+        "timestamp": 1795204291194
+      },
+      {
+        "executionId": "1f519a79-63be-48e6-a66f-0a231be694f1",
+        "chatSessionId": "sess_b7a6e62f-a873-4035-9bbb-91ccfc1065d8",
+        "timestamp": 1795204358796
+      }
+    ],
+    "8.3 Write repo-file tests": [
+      {
+        "executionId": "1f519a79-63be-48e6-a66f-0a231be694f1",
+        "chatSessionId": "sess_b7a6e62f-a873-4035-9bbb-91ccfc1065d8",
+        "timestamp": 1795204362184
+      },
+      {
+        "executionId": "1f519a79-63be-48e6-a66f-0a231be694f1",
+        "chatSessionId": "sess_b7a6e62f-a873-4035-9bbb-91ccfc1065d8",
+        "timestamp": 1795204444573
+      }
+    ],
+    "8. README and .gitignore": [
+      {
+        "executionId": "1f519a79-63be-48e6-a66f-0a231be694f1",
+        "chatSessionId": "sess_b7a6e62f-a873-4035-9bbb-91ccfc1065d8",
+        "timestamp": 1795204444606
+      }
+    ]
+  }
+}
