@@ -99,8 +99,7 @@ No test makes a live network call.
 python3 -m unittest discover -s backend
 python3 -m unittest discover -s cron
 python3 -m unittest discover -s tests
-cd ui && npm ci --ignore-scripts
-cd ui && npx vitest --run && npm run build
+cd ui && npm ci --ignore-scripts && npx vitest --run && npm run build
 ```
 
 `npm run build` writes `ui/dist/index.mjs` and fails if the file is missing. The built bundle is committed, because local installs do not build.
