@@ -31,8 +31,14 @@ const CSS = `
 `;
 
 const s: Record<string, CSSProperties> = {
-  page: {
+  outer: {
     minHeight: "100%",
+    display: "flex",
+    flexDirection: "column",
+    background: "#0b0d12",
+  },
+  page: {
+    flex: "1 0 auto",
     boxSizing: "border-box",
     padding: "28px clamp(14px, 4vw, 40px) 40px",
     color: "#d9d6cf",
@@ -105,10 +111,12 @@ const s: Record<string, CSSProperties> = {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
     gap: 26,
-    alignItems: "start",
+    alignItems: "stretch",
   },
   stone: {
     position: "relative",
+    display: "flex",
+    flexDirection: "column",
     boxSizing: "border-box",
     padding: "54px 22px 22px",
     borderRadius: "130px 130px 10px 10px / 110px 110px 10px 10px",
@@ -156,7 +164,8 @@ const s: Record<string, CSSProperties> = {
     lineHeight: 1.6,
     color: "#ffcf99",
   },
-  next: { margin: "12px 0 0", fontSize: 13, fontStyle: "italic", color: "#aeb4c0" },
+  footer: { marginTop: "auto", paddingTop: 12, display: "flex", flexDirection: "column", alignItems: "center" },
+  next: { margin: 0, fontSize: 13, fontStyle: "italic", color: "#aeb4c0" },
   ask: {
     marginTop: 14,
     padding: "8px 18px",
@@ -248,12 +257,14 @@ function Stone({ t, onAsk }: { t: Tombstone; onAsk: (t: Tombstone) => void }) {
           <span>{`${armed.daysLeft} days to 31 March`}</span>
         </p>
       )}
-      <p style={s.next}>{t.nextLabel}</p>
-      {armed !== null && (
-        <button type="button" className="banshee-ask" style={s.ask} onClick={() => onAsk(t)}>
-          Ask the banshee
-        </button>
-      )}
+      <div style={s.footer}>
+        <p style={s.next}>{t.nextLabel}</p>
+        {armed !== null && (
+          <button type="button" className="banshee-ask" style={s.ask} onClick={() => onAsk(t)}>
+            Ask the banshee
+          </button>
+        )}
+      </div>
     </article>
   );
 }
@@ -298,6 +309,7 @@ function Body({ state, onAsk }: { state: ViewState; onAsk: (t: Tombstone) => voi
 
 export default function Graveyard({ state, demo, onDemoChange, onAsk }: GraveyardProps) {
   return (
+    <div style={s.outer}>
     <main style={s.page}>
       <style>{CSS}</style>
       <header style={s.header}>
@@ -320,5 +332,6 @@ export default function Graveyard({ state, demo, onDemoChange, onAsk }: Graveyar
       </header>
       <Body state={state} onAsk={onAsk} />
     </main>
+    </div>
   );
 }

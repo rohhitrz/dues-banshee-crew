@@ -52,8 +52,14 @@ var h = "#ffb347", g = "0 0 10px 2px rgba(255,179,71,0.55), 0 0 28px 8px rgba(25
 .banshee-ask:hover { background: rgba(255,179,71,0.18); box-shadow: ${g}; }
 @media (prefers-reduced-motion: reduce) { .banshee-flame { animation: none; } }
 `, v = {
-	page: {
+	outer: {
 		minHeight: "100%",
+		display: "flex",
+		flexDirection: "column",
+		background: "#0b0d12"
+	},
+	page: {
+		flex: "1 0 auto",
 		boxSizing: "border-box",
 		padding: "28px clamp(14px, 4vw, 40px) 40px",
 		color: "#d9d6cf",
@@ -142,10 +148,12 @@ var h = "#ffb347", g = "0 0 10px 2px rgba(255,179,71,0.55), 0 0 28px 8px rgba(25
 		display: "grid",
 		gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
 		gap: 26,
-		alignItems: "start"
+		alignItems: "stretch"
 	},
 	stone: {
 		position: "relative",
+		display: "flex",
+		flexDirection: "column",
 		boxSizing: "border-box",
 		padding: "54px 22px 22px",
 		borderRadius: "130px 130px 10px 10px / 110px 110px 10px 10px",
@@ -211,8 +219,15 @@ var h = "#ffb347", g = "0 0 10px 2px rgba(255,179,71,0.55), 0 0 28px 8px rgba(25
 		lineHeight: 1.6,
 		color: "#ffcf99"
 	},
+	footer: {
+		marginTop: "auto",
+		paddingTop: 12,
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center"
+	},
 	next: {
-		margin: "12px 0 0",
+		margin: 0,
 		fontSize: 13,
 		fontStyle: "italic",
 		color: "#aeb4c0"
@@ -363,16 +378,18 @@ function x({ t: e, onAsk: t }) {
 					/* @__PURE__ */ o("span", { children: `${n.daysLeft} days to 31 March` })
 				]
 			}),
-			/* @__PURE__ */ o("p", {
-				style: v.next,
-				children: e.nextLabel
-			}),
-			n !== null && /* @__PURE__ */ o("button", {
-				type: "button",
-				className: "banshee-ask",
-				style: v.ask,
-				onClick: () => t(e),
-				children: "Ask the banshee"
+			/* @__PURE__ */ s("div", {
+				style: v.footer,
+				children: [/* @__PURE__ */ o("p", {
+					style: v.next,
+					children: e.nextLabel
+				}), n !== null && /* @__PURE__ */ o("button", {
+					type: "button",
+					className: "banshee-ask",
+					style: v.ask,
+					onClick: () => t(e),
+					children: "Ask the banshee"
+				})]
 			})
 		]
 	});
@@ -423,40 +440,43 @@ function S({ state: e, onAsk: t }) {
 	] });
 }
 function C({ state: e, demo: t, onDemoChange: n, onAsk: r }) {
-	return /* @__PURE__ */ s("main", {
-		style: v.page,
-		children: [
-			/* @__PURE__ */ o("style", { children: _ }),
-			/* @__PURE__ */ s("header", {
-				style: v.header,
-				children: [/* @__PURE__ */ s("div", {
-					style: v.titleRow,
-					children: [/* @__PURE__ */ o("span", {
-						className: "banshee-flame",
-						style: v.flame,
-						"aria-hidden": "true"
-					}), /* @__PURE__ */ s("div", { children: [/* @__PURE__ */ o("h1", {
-						style: v.title,
-						children: "Graveyard of Dues"
-					}), e.kind === "data" && /* @__PURE__ */ o("p", {
-						style: v.supplier,
-						children: e.summary.supplierName
-					})] })]
-				}), /* @__PURE__ */ s("label", {
-					style: v.toggle,
-					children: [/* @__PURE__ */ o("input", {
-						type: "checkbox",
-						style: v.checkbox,
-						checked: t,
-						onChange: (e) => n(e.target.checked)
-					}), "Demo date 2026-11-12"]
-				})]
-			}),
-			/* @__PURE__ */ o(S, {
-				state: e,
-				onAsk: r
-			})
-		]
+	return /* @__PURE__ */ o("div", {
+		style: v.outer,
+		children: /* @__PURE__ */ s("main", {
+			style: v.page,
+			children: [
+				/* @__PURE__ */ o("style", { children: _ }),
+				/* @__PURE__ */ s("header", {
+					style: v.header,
+					children: [/* @__PURE__ */ s("div", {
+						style: v.titleRow,
+						children: [/* @__PURE__ */ o("span", {
+							className: "banshee-flame",
+							style: v.flame,
+							"aria-hidden": "true"
+						}), /* @__PURE__ */ s("div", { children: [/* @__PURE__ */ o("h1", {
+							style: v.title,
+							children: "Graveyard of Dues"
+						}), e.kind === "data" && /* @__PURE__ */ o("p", {
+							style: v.supplier,
+							children: e.summary.supplierName
+						})] })]
+					}), /* @__PURE__ */ s("label", {
+						style: v.toggle,
+						children: [/* @__PURE__ */ o("input", {
+							type: "checkbox",
+							style: v.checkbox,
+							checked: t,
+							onChange: (e) => n(e.target.checked)
+						}), "Demo date 2026-11-12"]
+					})]
+				}),
+				/* @__PURE__ */ o(S, {
+					state: e,
+					onAsk: r
+				})
+			]
+		})
 	});
 }
 // src/index.tsx
