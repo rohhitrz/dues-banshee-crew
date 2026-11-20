@@ -1,0 +1,41 @@
+{
+  "supplierName": "Asha Garments",
+  "today": "2026-11-12",
+  "disclaimer": "Reminders a supplier sends to its own buyers. Not legal advice.",
+  "totals": {
+    "outstanding": { "text": "₹5,62,000" },
+    "interestAccrued": { "text": "₹6,310.52" },
+    "deductionsAtRisk": { "text": "₹4,12,000" },
+    "explodedCount": 1,
+    "paidCount": 3
+  },
+  "tombstones": [
+    {
+      "id": "inv-sharma-1",
+      "buyerName": "Sharma Textiles Pvt Ltd",
+      "invoiceNumber": "INV-2026-014",
+      "stateText": "Overdue",
+      "principal": { "text": "₹4,12,000" },
+      "dueDateText": "17 Oct 2026",
+      "daysOverdue": 26,
+      "interest": { "text": "₹5,127.94" },
+      "taxBomb": {
+        "daysLeft": 139,
+        "deductionAtRiskText": "₹4,12,000 deduction at risk"
+      },
+      "nextLabel": "Next: firm reminder"
+    },
+    {
+      "id": "inv-verma-2",
+      "buyerName": "Verma Traders",
+      "invoiceNumber": "INV-2026-019",
+      "stateText": "Not yet due",
+      "principal": { "text": "₹1,50,000" },
+      "dueDateText": null,
+      "daysOverdue": 0,
+      "interest": null,
+      "taxBomb": null,
+      "nextLabel": "Next: courtesy nudge"
+    }
+  ]
+}
