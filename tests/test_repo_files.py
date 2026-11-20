@@ -180,8 +180,10 @@ class ReadmeTest(unittest.TestCase):
         self.assertIn("Run now", ladder_sections[0])
 
     def test_screenshot_path_referenced(self):
-        # Only the reference is checked; the image is added by hand later.
         self.assertIn(f"]({SCREENSHOT})", self.text)
+
+    def test_screenshot_file_exists(self):
+        self.assertTrue((REPO_ROOT / SCREENSHOT).is_file())
 
 
 class LicenseTest(unittest.TestCase):
