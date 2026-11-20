@@ -10,7 +10,7 @@ A [Kiro Crew](https://kiro.dev) app for a micro or small supplier on Udyam who i
 - **Daily ladder.** The `daily-ladder` cron runs at 9:00 IST (`0 9 * * *`, `Asia/Kolkata`). It makes one POST to the web app's ladder endpoint. The ladder only creates drafts. Nothing reaches a buyer unless the owner approves it in the web app. The script is plain Python, makes no model call and uses no credits.
 - **Tax-bomb skill.** `skills/tax-bomb` explains Income-tax Act 1961 s.43B(h) (up to tax year 2025-26) and Income-tax Act 2025 s.37(2)(g) (from tax year 2026-27): a buyer's deduction for a late payment to a micro or small enterprise is allowed only in the year it is actually paid, so an invoice already past its MSMED Act s.15 time limit and still unpaid on 31 March loses that year's deduction. The "Ask the banshee" button on a tombstone opens a draft chat with the figures from that tombstone.
 
-The app is a thin client. Every amount, date, state and legal value comes from the web app as text and is shown as given. The app does no money, date or legal maths and never contacts a buyer. It sends requests only to the web app's summary and ladder endpoints. Every view carries the API's disclaimer: "Reminders a supplier sends to its own buyers. Not legal advice."
+The app is a thin client. Every amount, date, state and legal value comes from the web app as text and is shown as given. The app does no money, date or legal maths and never contacts a buyer. It sends requests only to the web app's summary and ladder endpoints. The data and empty views show the API's disclaimer: "Reminders a supplier sends to its own buyers. Not legal advice."
 
 ## Install (from a local path)
 
@@ -67,6 +67,8 @@ A sandboxed cron script may not be able to read the masked `secrets.json`. After
 
 Fill in the same two values as in `secrets.json`. This file is not masked and holds no `crew_read_secret`. The ladder secret only lets the ladder create drafts, and every send still needs your approval in the web app. The cron reads `secrets.json` first and falls back to `ladder.json`. The page backend never reads `ladder.json`.
 
+With a custom KIROCREW_HOME, the cron may still look under ~/.kiro/crew/apps/dues-banshee/data/; put ladder.json there if Run now still logs failed not_configured.
+
 ### If the ladder stops
 
 The scheduler pauses a script cron after 5 consecutive failures. If the ladder stops running, open the Schedule page, check the last error on `daily-ladder`, fix the cause, and resume it.
@@ -81,7 +83,13 @@ Your `data/` folder, including `secrets.json`, is kept across updates.
 
 ## Install from git (optional)
 
-If you prefer, install from the git repository instead of a local path. Use the install command from the Kiro Crew publishing guide with this repository's URL. The local-path install above is the tested route.
+`kirocrew app install` accepts a git URL. To install from the git repository instead of a local path:
+
+```
+kirocrew app install https://github.com/rohhitrz/dues-banshee-crew
+```
+
+The local-path install above is the tested route.
 
 ## Tests
 
@@ -91,6 +99,7 @@ No test makes a live network call.
 python3 -m unittest discover -s backend
 python3 -m unittest discover -s cron
 python3 -m unittest discover -s tests
+cd ui && npm ci --ignore-scripts
 cd ui && npx vitest --run && npm run build
 ```
 
