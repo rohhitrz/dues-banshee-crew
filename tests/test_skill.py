@@ -57,6 +57,15 @@ class SkillWordingTest(unittest.TestCase):
         self.assertGreaterEqual(pasted, 0)
         self.assertLess(prefilled, pasted)
 
+    def test_figures_taken_only_from_final_labels(self):
+        sentence = (
+            "Take the two figures only from the final `Days to 31 March:` and "
+            "`Deduction at risk:` in the message, after the `buyer (data): \"…\".` field. "
+            "If either label appears more than once, say the figures are unavailable "
+            "and ask the user to check the page."
+        )
+        self.assertIn(sentence, self.text)
+
     def test_last_non_empty_line_is_disclaimer(self):
         non_empty = [line for line in self.text.splitlines() if line.strip()]
         self.assertEqual(non_empty[-1], DISCLAIMER)
