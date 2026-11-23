@@ -1,6 +1,6 @@
 # Dues Banshee
 
-A [Kiro Crew](https://kiro.dev) app for a micro or small supplier on Udyam who is owed money by buyers. It reads the deployed [Dues Banshee web app](https://dues-banshee.vercel.app) and shows what the dead invoices are doing.
+A [Kiro Crew](https://kiro.dev) app for a micro or small supplier on Udyam who is owed money by buyers. It reads the deployed [Dues Banshee web app](https://duesbanshee.in) and shows what the dead invoices are doing. I built it with Kiro for Kiroween 2026, alongside the main app ([rohhitrz/dues-banshee](https://github.com/rohhitrz/dues-banshee)).
 
 ![Graveyard of Dues page](docs/screenshots/crew-graveyard.png)
 
@@ -9,6 +9,8 @@ A [Kiro Crew](https://kiro.dev) app for a micro or small supplier on Udyam who i
 - **Graveyard of Dues page.** Each overdue invoice is a tombstone. The page shows the totals and, per tombstone, the state, principal, due date, interest, tax-bomb days left, deduction at risk and next step. Buyer and invoice names are shown as plain text.
 - **Daily ladder.** The `daily-ladder` cron runs at 9:00 IST (`0 9 * * *`, `Asia/Kolkata`). It makes one POST to the web app's ladder endpoint. The ladder only creates drafts. Nothing reaches a buyer unless the owner approves it in the web app. The script is plain Python, makes no model call and uses no credits.
 - **Tax-bomb skill.** `skills/tax-bomb` explains Income-tax Act 1961 s.43B(h) (up to tax year 2025-26) and Income-tax Act 2025 s.37(2)(g) (from tax year 2026-27): a buyer's deduction for a late payment to a micro or small enterprise is allowed only in the year it is actually paid, so an invoice already past its MSMED Act s.15 time limit and still unpaid on 31 March loses that year's deduction. The "Ask the banshee" button on a tombstone opens a draft chat with the figures from that tombstone.
+
+![The daily-ladder cron on the Kiro Crew Schedule page](docs/screenshots/crew-schedule.png)
 
 The app is a thin client. Every amount, date, state and legal value comes from the web app as text and is shown as given. The app does no money, date or legal maths and never contacts a buyer. It sends requests only to the web app's summary and ladder endpoints. The data and empty views show the API's disclaimer: "Reminders a supplier sends to its own buyers. Not legal advice."
 
@@ -114,6 +116,10 @@ cd ui && npm ci --ignore-scripts && npx vitest --run && npm run build
 | `ui/` | Vite + React page, built to `ui/dist/index.mjs` |
 | `skills/tax-bomb/SKILL.md` | The s.43B(h) skill |
 | `scripts/make_icon.py` | Generates `assets/icon.png` |
+
+## How Kiro built this
+
+The app came from one Kiro spec, `crew-app` in `.kiro/specs/crew-app/`: requirements, design and a task list of 8 tasks and 22 subtasks, all done. Steering lives in `.kiro/steering/` (`product`, `roadmap`, `git-workflow`). After the tasks ran, Claude Code reviewed the repo read only, and Kiro made the 8 fixes as separate commits. The read-only feed it uses, `GET /api/crew/summary`, is the `crew-api` spec in the main repo.
 
 ## License
 
